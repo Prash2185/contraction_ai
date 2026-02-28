@@ -560,7 +560,7 @@ with tab_check:
         uploaded_top = st.file_uploader("Drone/Top", type=["jpg", "png"], key="top")
         if uploaded_top:
             img_top = Image.open(uploaded_top)
-            st.image(img_top, use_container_width=True, caption="Top Accepted")
+            st.image(img_top, use_column_width=True, caption="Top Accepted")
         st.markdown('</div>', unsafe_allow_html=True)
         
     with cam2:
@@ -569,7 +569,7 @@ with tab_check:
         uploaded_front = st.file_uploader("Front View", type=["jpg", "png"], key="front")
         if uploaded_front:
             img_front = Image.open(uploaded_front)
-            st.image(img_front, use_container_width=True, caption="Front Accepted")
+            st.image(img_front, use_column_width=True, caption="Front Accepted")
         st.markdown('</div>', unsafe_allow_html=True)
 
     with cam3:
@@ -578,7 +578,7 @@ with tab_check:
         uploaded_left = st.file_uploader("Left View", type=["jpg", "png"], key="left")
         if uploaded_left:
             img_left = Image.open(uploaded_left)
-            st.image(img_left, use_container_width=True, caption="Left Accepted")
+            st.image(img_left, use_column_width=True, caption="Left Accepted")
         st.markdown('</div>', unsafe_allow_html=True)
 
     with cam4:
@@ -587,7 +587,7 @@ with tab_check:
         uploaded_right = st.file_uploader("Right View", type=["jpg", "png"], key="right")
         if uploaded_right:
             img_right = Image.open(uploaded_right)
-            st.image(img_right, use_container_width=True, caption="Right Accepted")
+            st.image(img_right, use_column_width=True, caption="Right Accepted")
         st.markdown('</div>', unsafe_allow_html=True)
 
     btn_col, info_col = st.columns([2, 3])
@@ -663,7 +663,7 @@ with tab_check:
         with c_cad:
             st.markdown('<div class="glass-card">', unsafe_allow_html=True)
             st.markdown('<div class="card-title">📐 3D CAD REFERENCE (EXPECTED)</div>', unsafe_allow_html=True)
-            st.image(draw_cad_layout(st.session_state.cad_elements, 640, 380), use_container_width=True)
+            st.image(draw_cad_layout(st.session_state.cad_elements, 640, 380), use_column_width=True)
             st.markdown('</div>', unsafe_allow_html=True)
         with c_act:
             st.markdown('<div class="glass-card">', unsafe_allow_html=True)
@@ -679,7 +679,7 @@ with tab_check:
                 color = (0, 0, 255) if m["is_error"] else (0, 220, 100)
                 cv2.rectangle(site_img, (x1, y1), (x2, y2), color, 2)
                 cv2.putText(site_img, f"{m['object_type']}", (x1, y1-6), cv2.FONT_HERSHEY_SIMPLEX, 0.4, color, 1, cv2.LINE_AA)
-            st.image(site_img, use_container_width=True)
+            st.image(site_img, use_column_width=True)
             st.markdown('</div>', unsafe_allow_html=True)
             
         # Error Details Table
@@ -730,7 +730,7 @@ with tab_alerts:
     
     c_img, c_text = st.columns([3, 2])
     with c_img:
-        st.image(astar_vis, use_container_width=True, caption="Alternate MEP pipe routing avoiding new structure placement")
+        st.image(astar_vis, use_column_width=True, caption="Alternate MEP pipe routing avoiding new structure placement")
     with c_text:
         st.markdown(f'''
         <div style='background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:20px; font-family:JetBrains Mono,monospace;font-size:12px;'>
