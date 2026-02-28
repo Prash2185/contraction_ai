@@ -1,3 +1,5 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+
 # ConstructAI Requirements
 
 # Frontend
@@ -11,6 +13,8 @@ python-multipart==0.0.9
 pydantic==2.7.1
 
 # Vision AI
+torch
+torchvision
 opencv-python-headless==4.9.0.80
 ultralytics==8.2.0          # YOLOv8
 numpy==1.26.4

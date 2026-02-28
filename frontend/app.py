@@ -626,6 +626,7 @@ with tab_check:
 
         # Generate fake image from front view if uploaded, else blank
         if uploaded_front:
+            uploaded_front.seek(0)
             image_bytes = uploaded_front.read()
         else:
             h, w = 480, 640
